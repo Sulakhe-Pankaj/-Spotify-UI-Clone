@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="./assets/logo.png">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      .album-poster {
+        position: relative;
+        display: inline-block;
+      }
+      .album-poster .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0,0,0,0.5);
+        color: #fff;
+        font-size: 2rem;
+        opacity: 0;
+        transition: opacity 0.3s;
+        cursor: pointer;
+      }
+      .album-poster:hover .overlay {
+        opacity: 1;
+      }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="sidebar">
+            <div class="nav">
+                <div class="nav-option" style="opacity: 1;">
+                    <i class="fa-solid fa-house"></i>
+                    <a href="#">Home</a>
+                </div>
+                <div class="nav-option">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <a href="#">Search</a>
+                </div>
+            </div> 
+            <div class="library">
+                <div class="options">
+                    <div class="lib-option nav-option">
+                        <img src="./assets/library_icon.png">
+                        <a href="#">your library</a>
+                    </div>
+                    <div class="icons">
+                        <i class="fa-solid fa-plus"></i>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="lib-box">
+                    <div class="box">
+                        <p class="box-p1">Create your first playlist</p>
+                        <p class="box-p2">It's easy, we'll help you</p>
+                        <button class="badge">Create playlist</button>
+                    </div>
+                    <div class="lib-box">
+                        <div class="box">
+                            <p class="box-p1">Let's find some podcasts to follow</p>
+                            <p class="box-p2">We'll keep you updated on new opisodes</p>
+                            <button class="badge">Browse podcasts</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">main-content
+            <div class="sticky-nav">
+                <div class="sticky-nav-icons">
+                    <img src="./assets/backward_icon.png">
+                    <img src="./assets/forward_icon.png" class="hide">
+                </div>
+                <div class="sticky-nav-options">
+                    <button class="badge nav-item">Explore Premium</button>
+                    <button class="badge nav-item dark-badge"><i class="fa-regular fa-circle-down" style="margin-right: 5px;"></i>Install App</button>
+                    <i class="fa-regular fa-user nav-item"></i>
+                </div>
+
+            </div>
+
+            <h2>Recently Played</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="./assets/card1img.jpeg" class="card-image">
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Global chart-toppers refreshed every single day.</p>
+                </div> 
+            </div>
+            <h2>Trending now near you</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="./assets/card4img.jpeg" class="card-image">
+                    <p class="card-title">ALTER EGO NAA READY...</p>
+                    <p class="card-info">Anirudh Ravichander • Naa Ready (from LEO) • 2023 • 4:07 • 108M+ plays</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/card2img.jpeg" class="card-image">
+                    <p class="card-title">Mahiye Jinna Sohna...</p>
+                    <p class="card-info">Darshan Raval • Mahiye Jinna Sohna • 2023 • 3:01 • 310M+ plays</p>
+                </div>
+                <!-- <div class="card">
+                    <img src="./assets/card3img.jpeg" class="card-image">
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Stay tuned with the hottest tracks, updated daily...</p>
+                </div> -->
+                 <div class="card">
+                    <img src="./assets/card1.jpeg" class="card-image">
+                    <p class="card-title">SHREE HANUMAN CHALISA ❤️</p>
+                    <p class="card-info">Hariharan • Shree Hanuman Chalisa • T-Series • 5:03 • Devotional classic</p>
+                </div>
+                 <div class="card">
+                    <img src="./assets/card3img.jpeg" class="card-image">
+                    <p class="card-title">Merepaas Tum Ho...</p>
+                    <p class="card-info">Rahat Fateh Ali Khan • Mere Paas Tum Ho (Lofi Mix) • 2020 • 1:00 • Viral Edit</p>
+                </div>
+            </div>
+
+             <h2>featured Charte</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="./assets/card5img.jpeg" class="card-image">
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Discover the tracks ruling the world charts right now.</p>
+                </div> 
+                <div class="card">
+                    <img src="./assets/card6img.jpeg" class="card-image">
+                    <p class="card-title">Top Songs India</p>
+                    <p class="card-info">Catch India’s most loved hits, updated regularly.</p>
+                </div> 
+                <div class="card">
+                    <img src="./assets/card1img.jpeg" class="card-image">
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Experience nonstop trending music from around the globe.</p>
+                </div> 
+                <div class="card">
+                    <img src="./assets/card7img.jpeg" class="card-image">
+                    <p class="card-title">Top Hits Hindi</p>
+                    <p class="card-info">The hottest Hindi tracks, updated weekly with fresh chartbusters.</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/card9img.jpeg" class="card-image">
+                    <p class="card-title">Punjabi 101</p>
+                    <p class="card-info">Groove to trending Punjabi beats and viral bangers.</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/card8img.jpeg" class="card-image">
+                    <p class="card-title">Romantic Mix</p>
+                    <p class="card-info">Soothing love songs and heartfelt melodies just for you.</p>
+                </div>
+            </div>
+            <h2>Popular Artists</h2>
+            <div class="cards-container">
+                <div class="card artist-card">
+                    <img src="./assets/arijit.jpeg" class="artist-image">
+                    <p class="card-title">Arijit Singh</p>
+                    <p class="card-info">India’s most loved playback singer with soulful hits.</p>
+                </div>
+                <div class="card artist-card">
+                    <img src="./assets/darshan.jpeg" class="artist-image">
+                    <p class="card-title">Darshan Raval</p>
+                    <p class="card-info">Romantic ballads and chart-topping independent tracks.</p>
+                </div>
+                <div class="card artist-card">
+                    <img src="./assets/selena.jpeg" class="artist-image">
+                    <p class="card-title">Selena Gomez</p>
+                    <p class="card-info">Pop sensation blending global hits and heartfelt music.</p>
+                </div>
+                <div class="card artist-card">
+                    <img src="./assets/shreya.jpeg" class="artist-image">
+                    <p class="card-title">Shreya Ghoshal</p>
+                    <p class="card-info">Melodious queen of Bollywood with timeless songs.</p>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="music-player">
+            <div class="album">
+                 <div class="album-poster">
+                   <img src="./assets/card1.jpeg" class="album-icon">
+                   <div class="overlay">▶</div>
+                 </div>
+                <div class="album-details">
+                    <p class="album-title">Shree Hanuman Chalisa</p>
+                    <p class="album-artist">Hariharan • Shree Hanuman Chalisa • T-Series</p>
+                </div>
+                <div class="tiks">
+                    <img src="./assets/Tik.png" class="tik">
+                </div>
+                 <!-- <div class="album-add">+</div> -->
+            </div>  
+            <div class="player">
+                <div class="player-controls">
+                    <img src="./assets/player_icon1.png" class="player-control-icon">
+                    <img src="./assets/player_icon2.png" class="player-control-icon">
+                    <input type="checkbox" id="playToggle" hidden>
+                    <label for="playToggle">
+                        <img src="./assets/player_icon3.png" class="player-control-icon play-btn" style="opacity: 1;height: 2rem">
+                    </label>
+                    <audio id="myAudio">
+                      <source src="./assets/audio.mp3" type="audio/mpeg">
+                      Your browser does not support the audio element.
+                    </audio>
+                    <img src="./assets/player_icon4.png" class="player-control-icon">
+                    <img src="./assets/player_icon5.png" class="player-control-icon"> 
+                </div>
+                <div class="playback-bar">
+                    <span id="currentTime" class="curr-time">00:00</span>
+                    <input type="range" min="0" value="0" class="progress-bar" step="1" id="progressBar">
+                    <span id="totalTime" class="tot-time">00:00</span>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="sound">
+                    <span class="icon"><img src="./assets/device1.png"></span>
+                    <span class="icon"><img src="./assets/volume2.png"></span>
+                    <input type="range" min="0" max="100" value="50" class="sound-bar" step="1">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+      const checkbox = document.getElementById("playToggle");
+      const audio = document.getElementById("myAudio");
+      const currentTimeEl = document.getElementById("currentTime");
+      const totalTimeEl = document.getElementById("totalTime");
+
+      function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+      }
+
+      audio.addEventListener("loadedmetadata", () => {
+        totalTimeEl.textContent = formatTime(audio.duration);
+        progressBar.max = audio.duration;
+      });
+
+      checkbox.addEventListener("change", () => {
+        if (checkbox.checked) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      });
+
+      const progressBar = document.getElementById("progressBar");
+
+      audio.addEventListener("timeupdate", () => {
+        if (audio.duration) {
+          progressBar.value = audio.currentTime;
+          currentTimeEl.textContent = formatTime(audio.currentTime);
+        }
+      });
+
+      progressBar.addEventListener("input", () => {
+        audio.currentTime = progressBar.value;
+      });
+    </script>
+</body>
+</html>
